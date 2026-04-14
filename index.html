@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finger Heart AR ❤️</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- MediaPipe CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="loading-screen">
+  <h1>✦ Finger Heart AR</h1>
+  <div class="loading-spinner"></div>
+  <p>Starting camera and loading hand tracking...</p>
+</div>
+
+<div id="container">
+  <video id="video" autoplay muted playsinline></video>
+  <canvas id="bgCanvas"></canvas>
+  <canvas id="mainCanvas"></canvas>
+
+  <div id="hud">
+    <div class="hud-pill">
+      <div class="hud-dot"></div>
+      <span id="hands-label">0 hands</span>
+    </div>
+    <div class="hud-pill">
+      <span id="gesture-status">No gesture</span>
+    </div>
+  </div>
+
+  <div id="gesture-label"></div>
+
+  <div id="tutorial">
+    Touch your <strong>thumb tip</strong> to your 
+    <strong>index finger tip</strong> to make a 💜 finger heart!
+  </div>
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
